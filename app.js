@@ -34,12 +34,12 @@ bot.on('message', function(user, uID, cID, msg, event) {
     }
     
     //The 'say' command
-    if (msg.substr(1, 3) === "say" && (msg[0] == "!" || msg[0] == "/") && msg.length > 4) {
-      if (msg[4] != " ") {
-        msg = msg.substr(0, 4) + " " + msg.substr(4, msg.length);
-      }
-      sendMsg(cID, msg.substr(5, msg.length), true});
-    }
+    // if (msg.substr(1, 3) === "say" && (msg[0] == "!" || msg[0] == "/") && msg.length > 4) {
+    //   if (msg[4] != " ") {
+    //     msg = msg.substr(0, 4) + " " + msg.substr(4, msg.length);
+    //   }
+    //   sendMsg(cID, msg.substr(5, msg.length), true);
+    // }
 });
 
 // bot.sendMessage({
