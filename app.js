@@ -8,18 +8,33 @@ bot.on('ready', function() {
     console.log(bot.username + " - (" + bot.id + ")");
 });
 
-function sendMsg(cID, msg, tts=false) {
-  bot.sendMessage({
-    to: cID,
-    message: msg,
-    tts: tts
-  });
-}
-
-bot.on('message', function(user, uID, cID, msg, event) {
-  if (message.substr(0, 4)=="!comp"||"/comp") {
-    let args = message.substr(5, message.length).split(" ");
-    
+bot.on('message', function(user, userID, channelID, message, event) {
+  if (message.substr(0, 5)=="!comp "||"/comp "&&channelID in bot.directMessages) {
+    let args = message.substr(6, message.length).split(" ");
+    switch (args[0]) {
+      case "create":
+        bot.sendMessage({
+          to: channelID,
+          message: `successfully created your lobby`
+        });
+        break;
+      case "help":
+        bot.sendMessage({
+          to: channelID,
+          message:
+          `Commands:
+          create: creates a lobby
+          invite: invites someone to your lobby
+          `
+        });
+        break;
+      default:
+        bot.sendMessage({
+          to: channelID,
+          message: `${message} is not a valid command, to list all valid commands, type !comp help`
+        });
+        break;
+    }
   }
 });
 
