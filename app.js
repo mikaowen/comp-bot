@@ -37,10 +37,7 @@ bot.on('message', function(user, uID, cID, msg, event) {
       if (message[4] != " ") {
         message = message.substr(0, 4) + " " + message.substr(4, message.length);
       }
-      bot.sendMessage({
-        to: channelID,
-        message: `/tts ${message.substr(5, message.length)}`
-      });
+      sendMsg(cId, `/tts ${message.substr(5, message.length)}`);
     }
 });
 
