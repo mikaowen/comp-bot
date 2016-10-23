@@ -8,10 +8,11 @@ bot.on('ready', function() {
     console.log(bot.username + " - (" + bot.id + ")");
 });
 
-function sendMsg(cID, msg) {
+function sendMsg(cID, msg, tts=false) {
   bot.sendMessage({
     to: cID,
     message: msg
+    tts: tts
   });
 }
 
@@ -37,7 +38,7 @@ bot.on('message', function(user, uID, cID, msg, event) {
       if (msg[4] != " ") {
         msg = msg.substr(0, 4) + " " + msg.substr(4, msg.length);
       }
-      sendMsg(cID, `/tts ${msg.substr(5, msg.length)}`);
+      sendMsg(cID, msg.substr(5, msg.length), true});
     }
 });
 
