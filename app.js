@@ -9,7 +9,11 @@ bot.on("ready", function() {
 });
 
 bot.on("message", function(user, userID, channelID, message, event) {
-  if (message.substr(0, 5)=="!comp "||"/comp "&&channelID in bot.directMessages) {
+  if (
+    message.substr(0, 5) == "!comp " || "/comp " &&
+    channelID in bot.directMessages &&
+    userID != bot.id
+  ) {
     let args = message.substr(6, message.length).split(" ");
     switch (args[0]) {
     case "create":
@@ -18,7 +22,7 @@ bot.on("message", function(user, userID, channelID, message, event) {
         message: "successfully created your lobby"
       });
       break;
-    case "help":
+    case (args[0]=="help"||""):
       bot.sendMessage({
         to: channelID,
         message:
