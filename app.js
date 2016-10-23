@@ -25,7 +25,7 @@ bot.on('message', function(user, uID, cID, msg, event) {
         sendMsg(cID, `skrr`);
         break;
       case "who is mojo?":
-        sendMsg(cID, `idk?`);
+        sendMsg(cID, `Nobody knows who Mojo is`);
         break;
       case "we dem boys":
         sendMsg(cID, `holla holla`);
@@ -33,9 +33,9 @@ bot.on('message', function(user, uID, cID, msg, event) {
     }
     
     //The 'say' command
-    if (message.substr(1, 4) === "say" && (message[0] == "!" || message[1] == "/") && message.length > 5) {
+    if (message.substr(1, 3) === "say" && (message[0] == "!" || message[1] == "/") && message.length > 5) {
       if (message[4] != " ") {
-        message = message.substr(0, 4) + " " + message.substr(4, message.length);
+        message = message.substr(0, 3) + " " + message.substr(4, message.length);
       }
       bot.sendMessage({
         to: channelID,
