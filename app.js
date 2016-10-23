@@ -11,7 +11,7 @@ bot.on('ready', function() {
 function sendMsg(cID, msg, tts=false) {
   bot.sendMessage({
     to: cID,
-    message: msg
+    message: msg,
     tts: tts
   });
 }
