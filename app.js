@@ -8,25 +8,26 @@ bot.on('ready', function() {
     console.log(bot.username + " - (" + bot.id + ")");
 });
 
-bot.on('message', function(user, userID, channelID, message, event) {
+function sendMsg(cID, msg) {
+  bot.sendMessage({
+    to: cID,
+    message: msg
+  });
+}
+
+bot.on('message', function(user, uID, cID, msg, event) {
     switch (message.toLowerCase()) {
       case "hi bot":
-        bot.sendMessage({
-            to: channelID,
-            message: `hey <@${userID}>, nice to meet you.`
-        });
+        sendMsg(cID, `hey <@${uID}>, nice to meet you`)
         break;
       case "yeet":
-        bot.sendMessage({
-            to: channelID,
-            message: `skrr`
-        });
+        sendMsg(cID, `skrr`);
         break;
       case "who is mojo?":
-        bot.sendMessage({
-          to: channelID,
-          message: `Nobody knows who Mojo is.`
-        });
+        sendMsg(cID, `idk?`);
+        break;
+      case "we dem boys":
+        sendMsg(cID, `holla holla`);
         break;
     }
 });
