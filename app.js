@@ -16,6 +16,7 @@ function sendMsg(cID, msg) {
 }
 
 bot.on('message', function(user, uID, cID, msg, event) {
+    //msg switch statement
     switch (msg.toLowerCase()) {
       case "hi bot":
         sendMsg(cID, `hey <@${uID}>, nice to meet you`)
@@ -29,6 +30,17 @@ bot.on('message', function(user, uID, cID, msg, event) {
       case "we dem boys":
         sendMsg(cID, `holla holla`);
         break;
+    }
+    
+    //The 'say' command
+    if (message.substr(1, 4) === "say" && (message[0] == "!" || message[1] == "/") && message.length > 5) {
+      if (message[4] != " ") {
+        message = message.substr(0, 4) + " " + message.substr(4, message.length);
+      }
+      bot.sendMessage({
+        to: channelID,
+        message: `/tts ${message.substr(5, message.length)}`
+      });
     }
 });
 
