@@ -1,0 +1,27 @@
+{
+  "name": "comp-bot",
+  "version": "0.0.1",
+  "description": "A bot for organising CS:GO Competitive games in Discord",
+  "engines": {
+    "node": "6.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "discord.io":"2.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikaowen/comp-bot"
+  },
+  "keywords": [
+    "counter-strike",
+    "counter-strike global offensive",
+    "CS:GO",
+    "discord",
+    "discord bot"
+  ],
+  "license": "MIT"
+}

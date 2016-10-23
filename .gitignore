@@ -1,0 +1,15 @@
+# Node.JS
+node_modules
+npm-debug.log
+
+# Dev files
+*.env
+*.dev
+.DS_STORE
+
+# Visual Studio Code Settings
+.vscode
+
+# Docker
+Dockerfile
+docker-compose.yml
