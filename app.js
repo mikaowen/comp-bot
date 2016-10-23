@@ -33,11 +33,11 @@ bot.on('message', function(user, uID, cID, msg, event) {
     }
     
     //The 'say' command
-    if (message.substr(1, 3) === "say" && (message[0] == "!" || message[0] == "/") && message.length > 4) {
-      if (message[4] != " ") {
-        message = message.substr(0, 4) + " " + message.substr(4, message.length);
+    if (msg.substr(1, 3) === "say" && (msg[0] == "!" || msg[0] == "/") && msg.length > 4) {
+      if (msg[4] != " ") {
+        msg = msg.substr(0, 4) + " " + msg.substr(4, msg.length);
       }
-      sendMsg(cID, `/tts ${message.substr(5, message.length)}`);
+      sendMsg(cID, `/tts ${msg.substr(5, msg.length)}`);
     }
 });
 
