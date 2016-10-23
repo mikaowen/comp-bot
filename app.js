@@ -12,7 +12,7 @@ bot.on('message', function(user, userID, channelID, message, event) {
     if (message === "hi bot") {
         bot.sendMessage({
             to: channelID,
-            message: `hey @${user}#${userID}, nice to meet you.`
+            message: `hey <@${userID}>, nice to meet you.`
         });
         
         bot.sendMessage({
