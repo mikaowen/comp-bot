@@ -16,7 +16,7 @@ function sendMsg(cID, msg) {
 }
 
 bot.on('message', function(user, uID, cID, msg, event) {
-    switch (message.toLowerCase()) {
+    switch (msg.toLowerCase()) {
       case "hi bot":
         sendMsg(cID, `hey <@${uID}>, nice to meet you`)
         break;
