@@ -9,17 +9,25 @@ bot.on('ready', function() {
 });
 
 bot.on('message', function(user, userID, channelID, message, event) {
-    switch (message) {
+    switch (message.toLowerCase()) {
       case "hi bot":
         bot.sendMessage({
             to: channelID,
             message: `hey <@${userID}>, nice to meet you.`
         });
+        break;
       case "yeet":
         bot.sendMessage({
             to: channelID,
             message: `skrr`
         });
+        break;
+      case "who is mojo?":
+        bot.sendMessage({
+          to: channelID,
+          message: `Nobody knows who Mojo is.`
+        });
+        break;
     }
 });
 
