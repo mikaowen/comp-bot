@@ -1,1 +1,1 @@
-comp-bot
+# CS:GO Competitive bot
